@@ -132,10 +132,11 @@ int main(int argc, const char * argv[]) {
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     //设置顶点属性指针
+    //这里的第一个参数对0 对应vertexShaderSource, layout (location = 0)指将 location位置属性 glVertexAttribPointer定点属性设置为0后, location 再取出的就是Pointer 第一个参数为0 的属性
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    //以顶点属性位置值作为参数，启用顶点属性(顶点属性默认是禁用的)
     glEnableVertexAttribArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
-    
     
     while (!glfwWindowShouldClose(window)) {
         processInput(window);
