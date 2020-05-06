@@ -122,14 +122,25 @@ int main(int argc, const char * argv[]) {
 //    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
     
     unsigned int VBO;
+    //顶点缓冲对象是我们在OpenGL教程中第一个出现的OpenGL对象。就像OpenGL中的其它对象一样，这个缓冲有一个独一无二的ID，所以我们可以使用glGenBuffers函数和一个缓冲ID生成一个VBO对象
     glGenBuffers(1, &VBO);
     unsigned int VAO;
     //创建VAO
+    
     glGenVertexArrays(1, &VAO);
     //绑定VAO
+    ////OpenGL有很多缓冲对象类型，顶点缓冲对象的缓冲类型是GL_ARRAY_BUFFER。OpenGL允许我们同时绑定多个缓冲，只要它们是不同的缓冲类型。我们可以使用glBindBuffer函数把新创建的缓冲绑定到GL_ARRAY_BUFFER目标
     glBindVertexArray(VAO);
     //复制顶点数组到缓冲中供OpenGL使用
+    //从这一刻起，我们使用的任何（在GL_ARRAY_BUFFER目标上的）缓冲调用都会用来配置当前绑定的缓冲(VBO)。然后我们可以调用glBufferData函数，它会把之前定义的顶点数据复制到缓冲的内存中
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    //glBufferData是一个专门用来把用户定义的数据复制到当前绑定缓冲的函数。它的第一个参数是目标缓冲的类型：顶点缓冲对象当前绑定到GL_ARRAY_BUFFER目标上。第二个参数指定传输数据的大小(以字节为单位)；用一个简单的sizeof计算出顶点数据大小就行。第三个参数是我们希望发送的实际数据。
+
+    //第四个参数指定了我们希望显卡如何管理给定的数据。它有三种形式：
+
+    //GL_STATIC_DRAW ：数据不会或几乎不会改变。
+    //GL_DYNAMIC_DRAW：数据会被改变很多。
+    //GL_STREAM_DRAW ：数据每次绘制时都会改变。
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     //设置顶点属性指针
     //这里的第一个参数对0 对应vertexShaderSource, layout (location = 0)指将 location位置属性 glVertexAttribPointer定点属性设置为0后, location 再取出的就是Pointer 第一个参数为0 的属性
