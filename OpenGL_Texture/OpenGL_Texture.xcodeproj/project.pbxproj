@@ -42,6 +42,8 @@
 		52FF998A2463FA0F00801B87 /* stb_image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stb_image.cpp; sourceTree = "<group>"; };
 		52FF998C2464124700801B87 /* 4.1.texture2.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 4.1.texture2.fs; sourceTree = "<group>"; };
 		52FF998D246413AC00801B87 /* awesomeface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awesomeface.png; sourceTree = "<group>"; };
+		52FF9A5024654FE100801B87 /* 4.5.texture.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 4.5.texture.fs; sourceTree = "<group>"; };
+		52FF9A512465513400801B87 /* 4.5.texture.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 4.5.texture.vs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,8 @@
 				52FF99872463F35000801B87 /* 4.1.texture.vs */,
 				52FF99882463F36700801B87 /* 4.1.texture.fs */,
 				52FF998C2464124700801B87 /* 4.1.texture2.fs */,
+				52FF9A5024654FE100801B87 /* 4.5.texture.fs */,
+				52FF9A512465513400801B87 /* 4.5.texture.vs */,
 			);
 			path = Shader;
 			sourceTree = "<group>";
